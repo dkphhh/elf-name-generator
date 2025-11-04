@@ -1,22 +1,46 @@
 <script lang="ts">
-	import type { GeneratedName, GeneratorOptions, ElfGender } from '../lib/generator/types';
+	import { resolve } from '$app/paths';
+	import { notificationManager } from '$lib/notification/notificationManager.svelte';
 
-	// 使用 Svelte 5 runes
-	let gender = $state<ElfGender>('female');
-	let count = $state(10);
-	let includeLastName = $state(true);
-	let includeMeaning = $state(true);
-	let generatedNames = $state<GeneratedName[]>([]);
+	// 生成选项类型
+	const generateOptions: GeneratorOptions = $state({
+		gender: undefined,
+		race: undefined,
+		count: undefined,
+		style: undefined,
+		includeLastName: true
+	});
+
+	// 生成的名字列表
+	let generatedNames: GeneratedName[] = $state([]);
+
+	// 生成状态
 	let isGenerating = $state(false);
 
 	// 生成名字函数
-	function generateNames() {
+	async function generateNames() {
 		isGenerating = true;
-		// TODO: 实现实际的名字生成逻辑
-		setTimeout(() => {
-			generatedNames = [];
-			isGenerating = false;
-		}, 500);
+		const data = JSON.stringify(generateOptions);
+		const url = resolve('/api/elf-name-generate');
+		const res = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: data
+		});
+
+		if (res.ok) {
+			const result: GeneratedName[] = await res.json();
+			generatedNames = result;
+		} else {
+			notificationManager.sentMessage({
+				type: 'error',
+				message: [`Failed to generate names:${res.statusText}`]
+			});
+		}
+
+		isGenerating = false;
 	}
 </script>
 
@@ -49,18 +73,22 @@
 			<div class="card-body">
 				<h2 class="mb-4 card-title text-2xl">Generate Your Elf Name</h2>
 
-				<div class="form-control mb-4">
+				<div class=" mb-4">
 					<label class="label" for="gender">
 						<span class="label-text font-semibold">Gender</span>
 					</label>
-					<select id="gender" class="select-bordered select w-full" bind:value={gender}>
+					<select
+						id="gender"
+						class="select-bordered select w-full"
+						bind:value={generateOptions.gender}
+					>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
 						<option value="neutral">Neutral</option>
 					</select>
 				</div>
 
-				<div class="form-control mb-4">
+				<div class=" mb-4">
 					<label class="label" for="count">
 						<span class="label-text font-semibold">Number of Names</span>
 					</label>
@@ -69,29 +97,29 @@
 						type="range"
 						min="1"
 						max="50"
-						bind:value={count}
+						bind:value={generateOptions.count}
 						class="range range-primary"
 					/>
-					<span class="mt-2 text-sm text-gray-600">{count} names</span>
+					<span class="mt-2 text-sm text-gray-600">{generateOptions.count} names</span>
 				</div>
 
-				<div class="form-control mb-4">
+				<div class=" mb-4">
 					<label class="label cursor-pointer">
 						<span class="label-text">Include Last Name</span>
 						<input
 							type="checkbox"
-							bind:checked={includeLastName}
+							bind:checked={generateOptions.includeLastName}
 							class="checkbox checkbox-primary"
 						/>
 					</label>
 				</div>
 
-				<div class="form-control mb-4">
+				<div class=" mb-4">
 					<label class="label cursor-pointer">
 						<span class="label-text">Include Name Meaning</span>
 						<input
 							type="checkbox"
-							bind:checked={includeMeaning}
+							bind:checked={generateOptions.includeMeaning}
 							class="checkbox checkbox-primary"
 						/>
 					</label>
@@ -113,10 +141,10 @@
 		<section class="mx-auto mb-12 max-w-4xl">
 			<h2 class="mb-6 text-3xl font-bold">Generated Names</h2>
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-				{#each generatedNames as name (name.id)}
+				{#each generatedNames as name, index (index)}
 					<div class="card border border-gray-200 bg-base-100">
 						<div class="card-body">
-							<h3 class="card-title">{name.fullName}</h3>
+							<h3 class="card-title">{name.firstName + ' ' + name.lastName}</h3>
 							{#if name.meaning}
 								<p class="text-sm text-gray-600">{name.meaning}</p>
 							{/if}
@@ -166,12 +194,3 @@
 		</div>
 	</section>
 </main>
-
-<style>
-	:global(body) {
-		font-family:
-			system-ui,
-			-apple-system,
-			sans-serif;
-	}
-</style>

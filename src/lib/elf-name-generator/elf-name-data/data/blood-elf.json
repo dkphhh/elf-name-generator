@@ -51,8 +51,6 @@
 				"Uldar",
 				"Veldor",
 				"Waldir",
-				"Xeldor",
-				"Yalthar",
 				"Zeldrin"
 			],
 			"female": [
@@ -105,9 +103,7 @@
 				"Uldrina",
 				"Veldria",
 				"Waldria",
-				"Xeldria",
-				"Yalthira",
-				"Zeldria"
+				"Yalthira"
 			],
 			"neutral": [
 				"Aelari",
@@ -159,7 +155,6 @@
 				"Uldri",
 				"Veldi",
 				"Waldi",
-				"Xeldi",
 				"Yalthi",
 				"Zeldi"
 			]
@@ -634,6 +629,7 @@
 			"Knotwood",
 			"Larchleaf",
 			"Mapleheart",
+			"Bloodlion",
 			"Nutwood",
 			"Oakleaf",
 			"Pineblade",
@@ -645,6 +641,7 @@
 			"Vinewood",
 			"Willowleaf",
 			"Xyliaroot",
+			"Silverknife",
 			"Yarrowblade",
 			"Zelkovaheart"
 		]

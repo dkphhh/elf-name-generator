@@ -695,7 +695,8 @@
 				"Eldacar",
 				"Arathorn",
 				"Arvedui",
-				"Araphor"
+				"Araphor",
+				"Belwin"
 			],
 			"female": [
 				"Lúthien",
@@ -798,7 +799,8 @@
 				"Eldac",
 				"Arath",
 				"Arved",
-				"Araph"
+				"Araph",
+				"Besal"
 			]
 		},
 		"lastName": [
@@ -956,7 +958,9 @@
 				"Theron",
 				"Halduron",
 				"Brightwing",
-				"Charscale"
+				"Charscale",
+				"Lunith",
+				"Yoldina"
 			],
 			"neutral": [
 				"Fan",
@@ -1080,6 +1084,7 @@
 				"Redoran",
 				"Telvanni",
 				"Dres",
+				"Halanlore",
 				"Indoril",
 				"Sadras",
 				"Rilms",
@@ -1143,6 +1148,7 @@
 				"Seryn",
 				"Tazelh",
 				"Ula",
+				"Sinalith",
 				"Vahlok",
 				"Weland",
 				"Xarxes",
@@ -1204,6 +1210,7 @@
 				"Tevr",
 				"Ules",
 				"Anda",
+				"Sinna",
 				"Dro'Z",
 				"J'Darr",
 				"Ra'Jirr",
@@ -1224,7 +1231,9 @@
 			"Indoril",
 			"Nerevar",
 			"Dagoth",
-			"Ur",
+			"Ural",
+			"Suppo",
+			"Ramoran",
 			"Hlaalu",
 			"Redoran",
 			"Telvanni",
@@ -1241,9 +1250,10 @@
 			"Sarethi",
 			"Baravis",
 			"Indarys",
-			"Hlaren Ramoran",
-			"Raviro Drenim",
-			"Vabdas Telvanni",
+			"Hlaren",
+			"Drenim",
+			"Raviro",
+			"Vabdas",
 			"Tevra Ules",
 			"Andalen Drothmeri",
 			"Dro'Zara Khajiit",

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ElfGender } from '../../../lib/generator/types';
+	import type { ElfGender } from '../../../lib/elf-name-generator/types';
 
 	let gender = $state<ElfGender>('female');
 </script>

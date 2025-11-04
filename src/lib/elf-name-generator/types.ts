@@ -40,7 +40,7 @@ declare global {
 	 */
 	interface GeneratorOptions {
 		/** 性别 */
-		gender: ElfGender;
+		gender?: ElfGender;
 		/** 种族 */
 		race?: ElfRace;
 		/** 风格 */
@@ -57,8 +57,6 @@ declare global {
 	 * 生成的名字结果
 	 */
 	interface GeneratedName {
-		/** 唯一标识 */
-		id: string;
 		/** 名 */
 		firstName: string;
 		/** 姓(可选) */
@@ -69,6 +67,7 @@ declare global {
 		race?: ElfRace;
 		/** 风格 */
 		style?: NameStyle;
+		// TODO： 含义和发音指导暂未使用，后续通过 AI 添加这个功能
 		/** 含义 */
 		meaning?: string;
 		/** 发音指导 */
@@ -109,11 +108,11 @@ declare global {
 		useCases: string[];
 	}
 
-	type ElfNameDb = Record<
+	type ElfNameData = Record<
 		NameStyle,
 		{
-			firstNames: Record<ElfGender, string[]>;
-			lastNames: string[];
+			firstName: Record<ElfGender, string[]>;
+			lastName: string[];
 		}
 	>;
 }
