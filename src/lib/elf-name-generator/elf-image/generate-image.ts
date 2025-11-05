@@ -140,8 +140,8 @@ export async function createImgGenTask(option: {
 	const body = JSON.stringify({
 		req_key: 'jimeng_t2i_v40',
 		prompt: option.prompt,
-		width: 3040,
-		height: 5404,
+		width: 1440,
+		height: 2560,
 		force_single: true
 		// TODO: 添加其他必需参数
 	});
@@ -209,6 +209,9 @@ type QueryTaskResponse = {
 	time_elapsed: string;
 };
 
+/**
+ * 图像生成任务查询结果类型
+ */
 type TaskQueryResult =
 	| {
 			status: 'in_queue' | 'generating';
@@ -216,7 +219,13 @@ type TaskQueryResult =
 	  }
 	| {
 			status: 'done';
+			/**
+			 * 图像的url，和base64二进制数据二选一返回，需要通过数组长度进行判断
+			 */
 			imageUrls: string[];
+			/**
+			 * 图片的 base64二进制数据，和图像的url二选一返回，需要通过数组长度进行判断
+			 */
 			binaryDataBase64: string[];
 	  }
 	| {
@@ -229,6 +238,7 @@ type TaskQueryResult =
  * 查询即梦 4.0 图像生成任务状态（生成器函数）
  * @param taskId - 任务ID（由 createImgGenTask 返回）
  * @param options - 查询选项
+ * @param options.returnUrl - 是否返回图片 URL（true 返回 URL，false 返回 base64 二进制数据）, 默认为 true
  * @param options.pollingInterval - 轮询间隔（毫秒），默认 3000ms
  * @param options.maxAttempts - 最大查询次数，默认 100 次（约 5 分钟）
  * @yields TaskQueryResult - 任务状态信息
@@ -254,9 +264,10 @@ type TaskQueryResult =
 export async function* taskQuery(
 	taskId: string,
 	options: {
+		returnUrl: boolean;
 		pollingInterval?: number;
 		maxAttempts?: number;
-	} = {}
+	} = { returnUrl: true }
 ): AsyncGenerator<TaskQueryResult, void, unknown> {
 	const { pollingInterval = 3000, maxAttempts = 100 } = options;
 
@@ -279,7 +290,7 @@ export async function* taskQuery(
 
 		// 请求 Body 参数
 		const reqJson = {
-			return_url: true // 返回图片 URL（24小时有效期）
+			return_url: options.returnUrl // 返回图片 URL（24小时有效期）
 		};
 
 		const body = JSON.stringify({
@@ -449,25 +460,29 @@ export async function generateElfImage(option: {
 	imageUrls: string[];
 	binaryDataBase64: string[];
 }> {
+	const { race, gender } = option;
+
 	// 步骤 1：提交任务
-	console.log('submitting', '正在提交图像生成任务...');
+	console.log(`race:${race},gender:${gender}-`, '正在提交图像生成任务...');
 	const taskId = await createImgGenTask(option);
-	console.log('submitted', `任务已提交，task_id: ${taskId}`);
+	console.log(`race:${race},gender:${gender}-`, `任务已提交，task_id: ${taskId}`);
 
 	// 步骤 2：轮询任务状态
 	for await (const result of taskQuery(taskId)) {
 		if (result.status === 'done') {
-			console.log('completed', '图像生成完成！');
+			console.log(`race:${race},gender:${gender}-`, '图像生成完成！');
 			return {
 				imageUrls: result.imageUrls,
 				binaryDataBase64: result.binaryDataBase64
 			};
 		} else if (result.status === 'error') {
-			throw new Error(`图像生成失败: ${result.message} (code: ${result.code})`);
+			throw new Error(
+				`race:${race},gender:${gender}-图像生成失败: ${result.message} (code: ${result.code})`
+			);
 		} else {
-			console.log(result.status, result.message);
+			console.log(`race:${race},gender:${gender}-`, result.status, result.message);
 		}
 	}
 
-	throw new Error('未知错误：生成器异常退出');
+	throw new Error(`race:${race},gender:${gender}-未知错误：生成器异常退出`);
 }

@@ -1,47 +1,9 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { notificationManager } from '$lib/components/notification/notificationManager.svelte';
-	import ElfNameCard from '$lib/components/elf-name-card/ElfNameCard.svelte';
-	// 生成选项类型
-	const generateOptions: GeneratorOptions = $state({
-		gender: undefined,
-		race: undefined,
-		count: undefined,
-		style: undefined,
-		includeLastName: true
-	});
+	import Generator from '$lib/components/elf-name-generator/Generator.svelte';
+	import NameResault from '$lib/components/elf-name-card/NameResault.svelte';
 
 	// 生成的名字列表
 	let generatedNames: GeneratedName[] = $state([]);
-
-	// 生成状态
-	let isGenerating = $state(false);
-
-	// 生成名字函数
-	async function generateNames() {
-		isGenerating = true;
-		const data = JSON.stringify(generateOptions);
-		const url = resolve('/api/elf-name-generate');
-		const res = await fetch(url, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: data
-		});
-
-		if (res.ok) {
-			const result: GeneratedName[] = await res.json();
-			generatedNames = result;
-		} else {
-			notificationManager.sentMessage({
-				type: 'error',
-				message: [`Failed to generate names:${res.statusText}`]
-			});
-		}
-
-		isGenerating = false;
-	}
 </script>
 
 <svelte:head>
@@ -68,91 +30,10 @@
 	</section>
 
 	<!-- Generator Section -->
-	<section class="mx-auto mb-12 max-w-5xl">
-		<div class="card bg-base-100 shadow-xl">
-			<div class="card-body">
-				<h2 class="mb-4 card-title text-2xl">Generate Your Elf Name</h2>
-
-				<div class=" mb-4">
-					<label class="label" for="gender">
-						<span class="label-text font-semibold">Gender</span>
-					</label>
-					<select
-						id="gender"
-						class="select-bordered select w-full"
-						bind:value={generateOptions.gender}
-					>
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-						<option value="neutral">Neutral</option>
-					</select>
-				</div>
-
-				<div class=" mb-4">
-					<label class="label" for="count">
-						<span class="label-text font-semibold">Number of Names</span>
-					</label>
-					<input
-						id="count"
-						type="range"
-						min="1"
-						max="50"
-						bind:value={generateOptions.count}
-						class="range range-primary"
-					/>
-					<span class="mt-2 text-sm text-gray-600">{generateOptions.count} names</span>
-				</div>
-
-				<div class=" mb-4">
-					<label class="label cursor-pointer">
-						<span class="label-text">Include Last Name</span>
-						<input
-							type="checkbox"
-							bind:checked={generateOptions.includeLastName}
-							class="checkbox checkbox-primary"
-						/>
-					</label>
-				</div>
-
-				<div class=" mb-4">
-					<label class="label cursor-pointer">
-						<span class="label-text">Include Name Meaning</span>
-						<input
-							type="checkbox"
-							bind:checked={generateOptions.includeMeaning}
-							class="checkbox checkbox-primary"
-						/>
-					</label>
-				</div>
-
-				<button
-					class="btn w-full btn-lg btn-primary"
-					onclick={generateNames}
-					disabled={isGenerating}
-				>
-					{isGenerating ? 'Generating...' : 'Generate Names'}
-				</button>
-			</div>
-		</div>
-	</section>
+	<Generator bind:generatedNames />
 
 	<!-- Results Section -->
-	{#if generatedNames.length > 0}
-		<section class="mx-auto mb-12 max-w-6xl">
-			<h2 class="mb-6 text-3xl font-bold">Generated Names</h2>
-			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-				{#each generatedNames as n, index (index)}
-					<ElfNameCard
-						firstName={n.firstName}
-						lastName={n.lastName}
-						gender={n.gender}
-						race={n.race}
-						style={n.style}
-					/>
-				{/each}
-			</div>
-		</section>
-	{/if}
+	<NameResault {generatedNames} />
 
 	<!-- SEO Content Section -->
 	<section class="mx-auto prose prose-lg mb-12 max-w-4xl">

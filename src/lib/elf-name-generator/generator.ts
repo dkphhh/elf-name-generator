@@ -28,6 +28,11 @@ export function generateElfName(options?: GeneratorOptions): GeneratedName[] {
 			style: style
 		};
 
+		// 检查名字长度
+		if (elfName.firstName.length + (elfName.lastName ? elfName.lastName.length : 0) >= 19) {
+			i--; // 重新生成这一次
+			continue;
+		}
 		// 检查是否重复
 		const key = JSON.stringify(elfName);
 		if (seen.has(key)) {
