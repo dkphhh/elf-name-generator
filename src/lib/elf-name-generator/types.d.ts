@@ -64,10 +64,12 @@ declare global {
 		/** 性别 */
 		gender: ElfGender;
 		/** 种族 */
-		race?: ElfRace;
+		race: ElfRace;
 		/** 风格 */
-		style?: NameStyle;
-		// TODO： 含义和发音指导暂未使用，后续通过 AI 添加这个功能
+		style: NameStyle;
+		// TODO： 图片、含义和发音指导暂未使用，后续通过 AI 添加这个功能
+		/** 图片 */
+		image?: string;
 		/** 含义 */
 		meaning?: string;
 		/** 发音指导 */

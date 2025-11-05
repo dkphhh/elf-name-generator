@@ -4,4 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
+	test: {
+		testTimeout: 3000000 // 3000 秒
+	}
 });

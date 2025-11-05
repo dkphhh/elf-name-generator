@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { notificationManager } from '$lib/notification/notificationManager.svelte';
-
+	import { notificationManager } from '$lib/components/notification/notificationManager.svelte';
+	import ElfNameCard from '$lib/components/elf-name-card/ElfNameCard.svelte';
 	// 生成选项类型
 	const generateOptions: GeneratorOptions = $state({
 		gender: undefined,
@@ -68,7 +68,7 @@
 	</section>
 
 	<!-- Generator Section -->
-	<section class="mx-auto mb-12 max-w-4xl">
+	<section class="mx-auto mb-12 max-w-5xl">
 		<div class="card bg-base-100 shadow-xl">
 			<div class="card-body">
 				<h2 class="mb-4 card-title text-2xl">Generate Your Elf Name</h2>
@@ -138,18 +138,17 @@
 
 	<!-- Results Section -->
 	{#if generatedNames.length > 0}
-		<section class="mx-auto mb-12 max-w-4xl">
+		<section class="mx-auto mb-12 max-w-6xl">
 			<h2 class="mb-6 text-3xl font-bold">Generated Names</h2>
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-				{#each generatedNames as name, index (index)}
-					<div class="card border border-gray-200 bg-base-100">
-						<div class="card-body">
-							<h3 class="card-title">{name.firstName + ' ' + name.lastName}</h3>
-							{#if name.meaning}
-								<p class="text-sm text-gray-600">{name.meaning}</p>
-							{/if}
-						</div>
-					</div>
+			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+				{#each generatedNames as n, index (index)}
+					<ElfNameCard
+						firstName={n.firstName}
+						lastName={n.lastName}
+						gender={n.gender}
+						race={n.race}
+						style={n.style}
+					/>
 				{/each}
 			</div>
 		</section>

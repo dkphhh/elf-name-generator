@@ -1,3 +1,6 @@
-const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-a.splice(6, a.length - 6);
-console.log(a);
+// ISO 8601 格式：YYYYMMDD'T'HHMMSS'Z'
+const t = new Date()
+	.toISOString()
+	.replace(/[-:]/g, '')
+	.replace(/\.\d{3}/, '');
+console.log(t); // 示例输出：20251105T062345Z
