@@ -1,9 +1,8 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @plugin 'daisyui' {
-	themes:
-		everypizza --default,
-		dark --prefersdark;
+	themes: everypizza --default;
+	/* dark --prefersdark; */
 }
 
 /* add the code bellow */
