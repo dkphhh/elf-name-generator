@@ -3,7 +3,7 @@
 </script>
 
 <section class="mx-auto max-w-4xl">
-	<h2 class="mb-6 text-2xl font-bold">Explore More</h2>
+	<h2 class="mb-6 text-3xl font-bold">Explore More</h2>
 	<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
 		<a href={resolve('/generator')} class="btn btn-outline">All Generator</a>
 		<a href={resolve('/guide')} class="btn btn-outline">Naming Guide</a>

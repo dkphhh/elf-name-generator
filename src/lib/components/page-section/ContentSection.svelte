@@ -1,19 +1,7 @@
 <script lang="ts">
-	import {
-		RACE_GENERATOR_TDK,
-		GENDER_GENERATOR_TDK,
-		STYLE_GENERATOR_TDK
-	} from '$lib/seo/tdk-config';
-	import { resolve } from '$app/paths';
-	import {
-		ELF_RACE_MAP,
-		ELF_GENDER_MAP,
-		NAME_STYLE_MAP,
-		ELF_GENDER_LIST,
-		ELF_RACE_LIST,
-		NAME_STYLE_LIST
-	} from '$lib/elf-name-generator/constant';
+	import { ELF_RACE_MAP, ELF_GENDER_MAP, NAME_STYLE_MAP } from '$lib/elf-name-generator/constant';
 	import { page } from '$app/state';
+	import GeneratorButton from '$lib/components/elf-name-generator/GeneratorButton.svelte';
 
 	let pageParam = $derived(page.params.page as string);
 
@@ -31,6 +19,7 @@
 
 	<MarkdownRender md={content} />
 
+	<!-- 使用步骤 -->
 	<h2>How to Use This Generator</h2>
 	<!-- 删除本页代表的步骤 -->
 	<ol>
@@ -45,37 +34,7 @@
 		<li>Click "Generate Names" to see your results</li>
 		<li>Save or copy your favorite names</li>
 	</ol>
-
-	<h2>Popular Elf Name Categories</h2>
-
-	<!-- 依次渲染 race、gender、style，如果本页项目在其中，则删除 -->
-	<ul>
-		{#each ELF_RACE_LIST as race (race)}
-			{#if race !== pageParam}
-				<li>
-					<a href={resolve(`/generator/${race}`)}>{ELF_RACE_MAP[race]} Name Generator</a> - {RACE_GENERATOR_TDK[
-						race
-					].description}
-				</li>
-			{/if}
-		{/each}
-		{#each ELF_GENDER_LIST as gender (gender)}
-			{#if gender !== pageParam}
-				<li>
-					<a href={resolve(`/generator/${gender}`)}>{ELF_GENDER_MAP[gender]} Elf Name Generator</a>
-					- {GENDER_GENERATOR_TDK[gender].description}
-				</li>
-			{/if}
-		{/each}
-		{#each NAME_STYLE_LIST as style (style)}
-			{#if style !== pageParam}
-				<li>
-					<a href={resolve(`/generator/${style}`)}
-						>{NAME_STYLE_MAP[style]} Style Elf Name Generator</a
-					>
-					- {STYLE_GENERATOR_TDK[style].description}
-				</li>
-			{/if}
-		{/each}
-	</ul>
+	<!-- 热门生成器 -->
+	<h2>Popular Elf Name Generators</h2>
+	<GeneratorButton />
 </section>

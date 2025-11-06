@@ -10,6 +10,8 @@
 		NAME_STYLE_LIST,
 		NAME_STYLE_MAP
 	} from '$lib/elf-name-generator/constant';
+	import Footer from '$lib/components/page-section/Footer.svelte';
+	import FrontSection from '$lib/components/page-section/FrontSection.svelte';
 </script>
 
 <SeoTDK
@@ -27,24 +29,34 @@
 
 <main class="container mx-auto px-4 py-8">
 	<!-- Hero Section -->
-	<section class="mb-12 text-center">
-		<h1 class="mb-4 text-4xl font-bold md:text-6xl">All Elf Name Generators</h1>
-		<p class="mx-auto max-w-2xl text-xl text-gray-600">
-			Choose from our collection of specialized elf name generators by race, gender, or style.
-		</p>
-	</section>
+	<FrontSection
+		pageTitle="All Elf Name Generators"
+		pageDescription="			Choose from our collection of specialized elf name generators by race, gender, or style.
+"
+	/>
 
 	<!-- 种族生成器 -->
-	<GeneratorCard categoryList={ELF_RACE_LIST} categoryMap={ELF_RACE_MAP} />
+	<section class="mb-12">
+		<h2 class="mb-6 text-3xl font-bold">Generate by Race</h2>
+		<GeneratorCard categoryList={ELF_RACE_LIST} categoryMap={ELF_RACE_MAP} />
+	</section>
 
 	<!-- 性别生成器 -->
-	<GeneratorCard categoryList={ELF_GENDER_LIST} categoryMap={ELF_GENDER_MAP} />
+	<section class="mb-12">
+		<h2 class="mb-6 text-3xl font-bold">Generate by Gender</h2>
+		<GeneratorCard categoryList={ELF_GENDER_LIST} categoryMap={ELF_GENDER_MAP} />
+	</section>
 
 	<!-- 命名风格生成器 -->
-	<GeneratorCard categoryList={NAME_STYLE_LIST} categoryMap={NAME_STYLE_MAP} />
-    
+	<section class="mb-12">
+		<h2 class="mb-6 text-3xl font-bold">Generate by Style</h2>
+		<GeneratorCard categoryList={NAME_STYLE_LIST} categoryMap={NAME_STYLE_MAP} />
+	</section>
+
 	<!-- 返回主页 -->
 	<section class="text-center">
 		<a href={resolve('/')} class="btn btn-outline btn-lg">← Back to Main Generator</a>
 	</section>
+
+	<Footer />
 </main>

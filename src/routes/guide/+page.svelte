@@ -2,6 +2,7 @@
 	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
 	import { PAGE_TDK } from '$lib/seo/tdk-config';
 	import Footer from '$lib/components/page-section/Footer.svelte';
+	import GeneratorButton from '$lib/components/elf-name-generator/GeneratorButton.svelte';
 </script>
 
 <SeoTDK
@@ -81,12 +82,7 @@
 
 		<section>
 			<h2>Popular Elf Name Generators</h2>
-			<div class="not-prose my-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-				<a href="/generator/male" class="btn btn-outline">Male Elf Names</a>
-				<a href="/generator/female" class="btn btn-outline">Female Elf Names</a>
-				<a href="/generator/high-elf" class="btn btn-outline">High Elf Names</a>
-				<a href="/generator/wood-elf" class="btn btn-outline">Wood Elf Names</a>
-			</div>
+			<GeneratorButton />
 		</section>
 
 		<section>

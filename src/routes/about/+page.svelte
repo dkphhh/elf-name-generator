@@ -1,6 +1,7 @@
 <script lang="ts">
-	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
 	import Footer from '$lib/components/page-section/Footer.svelte';
+	import GeneratorButton from '$lib/components/elf-name-generator/GeneratorButton.svelte';
 	import { PAGE_TDK } from '$lib/seo/tdk-config';
 </script>
 
@@ -50,6 +51,11 @@
 				<li>The Elder Scrolls</li>
 				<li>Other popular fantasy settings</li>
 			</ul>
+		</section>
+
+		<section>
+			<h2>Popular Elf Name Generators</h2>
+			<GeneratorButton />
 		</section>
 
 		<section>
