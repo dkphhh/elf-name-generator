@@ -1,23 +1,14 @@
 <script lang="ts">
 	import Generator from '$lib/components/elf-name-generator/Generator.svelte';
 	import NameResault from '$lib/components/elf-name-card/NameResault.svelte';
+	import SeoTDK from '$lib/components/SeoTDK.svelte';
 
 	// 生成的名字列表
 	let generatedNames: GeneratedName[] = $state([]);
 </script>
 
-<svelte:head>
-	<title>Elf Name Generator - Create Fantasy Elf Names Instantly</title>
-	<meta
-		name="description"
-		content="Generate unique fantasy elf names for your characters. Free elf name generator with meanings, multiple races, and customization options. Perfect for D&D, WoW, and fantasy writing."
-	/>
-	<meta
-		name="keywords"
-		content="elf name generator, fantasy name generator, dnd elf names, wood elf names, high elf names, dark elf names"
-	/>
-	<link rel="canonical" href="https://yoursite.com/" />
-</svelte:head>
+<!-- 使用默认 TDK -->
+<SeoTDK canonical="/" />
 
 <main class="container mx-auto px-4 py-8">
 	<!-- Hero Section -->

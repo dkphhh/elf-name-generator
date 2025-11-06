@@ -2,7 +2,7 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Notification from '$lib/components/notification/Notification.svelte';
-	import ColorModeButton from '$lib/components/notification/ColorModeButton.svelte';
+	import ColorModeButton from '$lib/components/ColorModeButton.svelte';
 	let { children } = $props();
 </script>
 

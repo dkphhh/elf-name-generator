@@ -1,4 +1,7 @@
 <script lang="ts">
+	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import { PAGE_TDK } from '$lib/seo/tdk-config';
+
 	// 博客列表页
 	interface BlogPost {
 		slug: string;
@@ -28,13 +31,12 @@
 	]);
 </script>
 
-<svelte:head>
-	<title>Elf Name Blog - Fantasy Naming Tips & Guides</title>
-	<meta
-		name="description"
-		content="Read articles about elf names, fantasy naming conventions, character creation tips, and more."
-	/>
-</svelte:head>
+<SeoTDK
+	title={PAGE_TDK.blog.title}
+	description={PAGE_TDK.blog.description}
+	keywords={PAGE_TDK.blog.keywords}
+	canonical="/blog"
+/>
 
 <main class="container mx-auto px-4 py-8">
 	<h1 class="mb-8 text-4xl font-bold">Elf Name Blog</h1>

@@ -1,17 +1,17 @@
 <script lang="ts">
-	// About 页面
+	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import { PAGE_TDK } from '$lib/seo/tdk-config';
 </script>
 
-<svelte:head>
-	<title>About - Elf Name Generator</title>
-	<meta
-		name="description"
-		content="Learn about our elf name generator tool and how we help fantasy writers, gamers, and creators find the perfect names for their characters."
-	/>
-</svelte:head>
+<SeoTDK
+	title={PAGE_TDK.about.title}
+	description={PAGE_TDK.about.description}
+	keywords={PAGE_TDK.about.keywords}
+	canonical="/about"
+/>
 
 <main class="container mx-auto px-4 py-8">
-	<article class="prose prose-lg max-w-4xl mx-auto">
+	<article class="mx-auto prose prose-lg max-w-4xl">
 		<h1>About Elf Name Generator</h1>
 
 		<section>
@@ -27,7 +27,9 @@
 			<h2>Why Use Our Generator?</h2>
 			<ul>
 				<li><strong>Authentic Names:</strong> Based on established fantasy naming conventions</li>
-				<li><strong>Multiple Options:</strong> Generate names for different elf races and styles</li>
+				<li>
+					<strong>Multiple Options:</strong> Generate names for different elf races and styles
+				</li>
 				<li><strong>Meaningful:</strong> Each name comes with its meaning and pronunciation</li>
 				<li><strong>Free Forever:</strong> No registration, no ads, completely free</li>
 				<li><strong>Easy to Use:</strong> Simple interface, instant results</li>

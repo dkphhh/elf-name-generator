@@ -10,13 +10,18 @@
 		ELF_GENDER_MAP
 	} from '$lib/elf-name-generator/constant';
 
-	let { generatedNames = $bindable() }: { generatedNames: GeneratedName[] } = $props();
+	let {
+		generatedNames = $bindable(),
+		initialOptions = {}
+	}: { generatedNames: GeneratedName[]; initialOptions?: Partial<GeneratorOptions> } = $props();
+
 	let generateOptions: GeneratorOptions = $state({
-		gender: undefined,
-		race: undefined,
-		count: 1,
-		style: undefined,
-		includeLastName: true
+		gender: initialOptions.gender,
+		race: initialOptions.race,
+		count: initialOptions.count || 6,
+		style: initialOptions.style,
+		includeLastName: initialOptions.includeLastName ?? true,
+		includeMeaning: initialOptions.includeMeaning
 	});
 	// 生成状态
 	let isGenerating = $state(false);

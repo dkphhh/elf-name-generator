@@ -1,14 +1,14 @@
 <script lang="ts">
-	// 精灵命名指南
+	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import { PAGE_TDK } from '$lib/seo/tdk-config';
 </script>
 
-<svelte:head>
-	<title>Elf Naming Guide - How to Create Perfect Elf Names</title>
-	<meta
-		name="description"
-		content="Complete guide to creating authentic elf names. Learn about naming conventions, cultural traditions, and tips for fantasy character creation."
-	/>
-</svelte:head>
+<SeoTDK
+	title={PAGE_TDK.guide.title}
+	description={PAGE_TDK.guide.description}
+	keywords={PAGE_TDK.guide.keywords}
+	canonical="/guide"
+/>
 
 <main class="container mx-auto px-4 py-8">
 	<article class="mx-auto prose prose-lg max-w-4xl">

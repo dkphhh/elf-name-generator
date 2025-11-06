@@ -10,14 +10,12 @@ src/
 ├── routes/
 │   ├── +page.svelte                # 首页 (主生成器)
 │   ├── generator/                  # 各类生成器页面
-│   │   ├── male/                   # 男性精灵名字
-│   │   ├── female/                 # 女性精灵名字
 │   │   ├── high-elf/               # 高等精灵
 │   │   ├── wood-elf/               # 森林精灵
 │   │   ├── dark-elf/               # 黑暗精灵
 │   │   ├── night-elf/              # 暗夜精灵
 │   │   ├── blood-elf/              # 血精灵
-│   │   └── dnd/                    # D&D 专用
+│   │   └── ...                     # 其他精灵种类
 │   ├── guide/                      # 命名指南
 │   ├── blog/                       # 博客系统
 │   ├── about/                      # 关于页面
@@ -69,7 +67,6 @@ src/
 2. 相关的指南内容
 3. 1-2 篇相关博客文章
 4. 返回首页的链接
-
 
 ### 2️⃣ 内容页面 (Content Pages)
 

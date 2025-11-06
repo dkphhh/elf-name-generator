@@ -22,7 +22,7 @@ export async function getDescription(race: ElfRace) {
 - 🎨 **Appearance & Characteristics**: Physical traits, cultural/artistic style, distinctive demeanor
 - ⚔️ **Racial Abilities**: Magical aptitude, combat specialties, civilization achievements
 - 🌍 **Cross-Universe Mirroring**: Corresponding races in other works and an analysis of their differences
-- 💭 **Deep Dive**: Creative concepts reflected in the racial design
+- 💭 **Deep Dive**: Creative concepts reflected igennn the racial design
 
 Guide users to explore the rich dimensions of the fantasy world with humor and enthusiasm.`;
 
