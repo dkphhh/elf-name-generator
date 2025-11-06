@@ -1,20 +1,33 @@
-import fs from 'fs/promises';
-import path from 'path';
+// 直接导入所有 JSON 数据文件
+import bloodElfData from './data/blood-elf.json';
+import darkElfData from './data/dark-elf.json';
+import highElfData from './data/high-elf.json';
+import moonElfData from './data/moon-elf.json';
+import nightElfData from './data/night-elf.json';
+import seaElfData from './data/sea-elf.json';
+import snowElfData from './data/snow-elf.json';
+import sunElfData from './data/sun-elf.json';
+import wildElfData from './data/wild-elf.json';
+import woodElfData from './data/wood-elf.json';
 
-const DB_DIR = '/src/lib/elf-name-generator/elf-name-data/data';
+// 临时存储，用于数据验证
+const dataList: Array<{ race: ElfRace; data: ElfNameData }> = [
+	{ race: 'blood-elf', data: bloodElfData as ElfNameData },
+	{ race: 'dark-elf', data: darkElfData as ElfNameData },
+	{ race: 'high-elf', data: highElfData as ElfNameData },
+	{ race: 'moon-elf', data: moonElfData as ElfNameData },
+	{ race: 'night-elf', data: nightElfData as ElfNameData },
+	{ race: 'sea-elf', data: seaElfData as ElfNameData },
+	{ race: 'snow-elf', data: snowElfData as ElfNameData },
+	{ race: 'sun-elf', data: sunElfData as ElfNameData },
+	{ race: 'wild-elf', data: wildElfData as ElfNameData },
+	{ race: 'wood-elf', data: woodElfData as ElfNameData }
+];
 
-const dbFilePath = fs.glob('*.json', { cwd: path.join(process.cwd(), DB_DIR) });
 const elfData: Record<ElfRace, ElfNameData> = {} as Record<ElfRace, ElfNameData>;
 
-for await (const filePath of dbFilePath) {
-	const fileFullPath = path.join(process.cwd(), DB_DIR, filePath);
-	// 读取文件内容
-	const jsonString = await fs.readFile(fileFullPath, 'utf-8');
-	const d = (await JSON.parse(jsonString)) as ElfNameData;
-
-	// 获取数据集名称
-	const elfRaceName = path.parse(filePath).name as ElfRace;
-
+// 验证和处理数据
+for (const { race: elfRaceName, data: d } of dataList) {
 	for (const style in d) {
 		const s = style as NameStyle;
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.ico';
 	import Notification from '$lib/components/common-components/notification/Notification.svelte';
 	// import ColorModeButton from '$lib/components/ColorModeButton.svelte';
 	let { children } = $props();

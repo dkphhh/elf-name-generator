@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ORIGIN } from '$env/static/private';
+	import { PUBLIC_BASE_URL } from '$env/static/public';
 
 	let {
 		title,
@@ -26,7 +26,7 @@
 		'd&d names',
 		'fantasy character names'
 	];
-	const SITE_URL = ORIGIN;
+	const SITE_URL = PUBLIC_BASE_URL;
 
 	/**
 	 * 生成最终的页面标题

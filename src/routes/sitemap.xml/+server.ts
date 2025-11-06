@@ -1,9 +1,9 @@
 import type { RequestHandler } from './$types';
-import { ORIGIN } from '$env/static/private';
+import { PUBLIC_BASE_URL } from '$env/static/public';
 import { ELF_RACE_LIST, ELF_GENDER_LIST, NAME_STYLE_LIST } from '$lib/elf-name-generator/constant';
 
 export const GET: RequestHandler = async () => {
-	const baseUrl = ORIGIN;
+	const baseUrl = PUBLIC_BASE_URL;
 
 	// 静态页面
 	const staticPages = [

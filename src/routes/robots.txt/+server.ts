@@ -1,8 +1,8 @@
 import type { RequestHandler } from './$types';
-import { ORIGIN } from '$env/static/private';
+import { PUBLIC_BASE_URL } from '$env/static/public';
 
 export const GET: RequestHandler = async () => {
-	const baseUrl = ORIGIN;
+	const baseUrl = PUBLIC_BASE_URL;
 
 	const robots = `User-agent: *
 Allow: /
