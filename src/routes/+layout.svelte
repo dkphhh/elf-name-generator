@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import Notification from '$lib/components/notification/Notification.svelte';
-	import ColorModeButton from '$lib/components/ColorModeButton.svelte';
+	import Notification from '$lib/components/common-components/notification/Notification.svelte';
+	// import ColorModeButton from '$lib/components/ColorModeButton.svelte';
 	let { children } = $props();
 </script>
 
@@ -11,7 +11,7 @@
 </svelte:head>
 
 <Notification />
-<ColorModeButton />
+<!-- <ColorModeButton /> -->
 <div>
 	{@render children()}
 </div>

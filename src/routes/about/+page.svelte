@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import Footer from '$lib/components/page-section/Footer.svelte';
 	import { PAGE_TDK } from '$lib/seo/tdk-config';
 </script>
 
@@ -54,9 +55,13 @@
 		<section>
 			<h2>Contact Us</h2>
 			<p>
-				Have suggestions or feedback? We'd love to hear from you! Contact us at [your email or
-				contact form].
+				Have suggestions or feedback? We'd love to hear from you! Contact <a
+					href="mailto:dkphhh@foxmail.com"
+				>
+					dkphhh@foxmail.com</a
+				>.
 			</p>
 		</section>
 	</article>
+	<Footer />
 </main>

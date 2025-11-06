@@ -2,13 +2,17 @@
 	import { page } from '$app/state';
 	import Generator from '$lib/components/elf-name-generator/Generator.svelte';
 	import NameResault from '$lib/components/elf-name-card/NameResault.svelte';
-	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
 	import {
 		RACE_GENERATOR_TDK,
 		GENDER_GENERATOR_TDK,
 		STYLE_GENERATOR_TDK
 	} from '$lib/seo/tdk-config';
 	import { ELF_RACE_MAP, ELF_GENDER_MAP, NAME_STYLE_MAP } from '$lib/elf-name-generator/constant';
+	import { RACE_PAGE_DATA } from '$lib/seo/page-data';
+	import ContentSection from '$lib/components/page-section/ContentSection.svelte';
+	import FrontSection from '$lib/components/page-section/FrontSection.svelte';
+	import Footer from '$lib/components/page-section/Footer.svelte';
 
 	let generatedNames: GeneratedName[] = $state([]);
 
@@ -19,6 +23,28 @@
 	let isRace = $derived(pageParam in ELF_RACE_MAP);
 	let isGender = $derived(pageParam in ELF_GENDER_MAP);
 	let isStyle = $derived(pageParam in NAME_STYLE_MAP);
+
+	let contentTitle = $derived.by(() => {
+		if (isRace) {
+			return `About ${ELF_RACE_MAP[pageParam as ElfRace]}`;
+		} else if (isGender) {
+			return ``;
+		} else if (isStyle) {
+			return ``;
+		}
+		return '';
+	});
+
+	let content = $derived.by(() => {
+		if (isRace) {
+			return RACE_PAGE_DATA[pageParam as ElfRace];
+		} else if (isGender) {
+			return ``;
+		} else if (isStyle) {
+			return ``;
+		}
+		return '';
+	});
 
 	// 获取对应的 TDK 配置
 	let tdkConfig = $derived.by(() => {
@@ -67,17 +93,15 @@
 {/if}
 
 <main class="container mx-auto px-4 py-8">
-	<section class="mb-12 text-center">
-		<h1 class="mb-4 text-4xl font-bold md:text-6xl">{displayName} Name Generator</h1>
-		{#if tdkConfig}
-			<p class="mx-auto max-w-2xl text-xl text-gray-600">
-				{tdkConfig.description}
-			</p>
-		{/if}
-	</section>
+	<!-- Hero Section -->
+	<FrontSection
+		pageTitle={`${displayName} Name Generator`}
+		pageDescription={tdkConfig?.description}
+	/>
 
 	<Generator bind:generatedNames {initialOptions} />
 	<NameResault {generatedNames} />
 
-	<!-- TODO: 添加种族/性别特定的 SEO 内容 -->
+	<ContentSection {contentTitle} {content} />
+	<Footer />
 </main>

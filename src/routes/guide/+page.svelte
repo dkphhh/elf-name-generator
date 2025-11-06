@@ -1,6 +1,7 @@
 <script lang="ts">
-	import SeoTDK from '$lib/components/SeoTDK.svelte';
+	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
 	import { PAGE_TDK } from '$lib/seo/tdk-config';
+	import Footer from '$lib/components/page-section/Footer.svelte';
 </script>
 
 <SeoTDK
@@ -134,4 +135,5 @@
 			</p>
 		</section>
 	</article>
+	<Footer />
 </main>

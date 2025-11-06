@@ -17,7 +17,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'high-elf': {
 		title: 'High Elf Name Generator - Noble & Elegant Names',
 		description:
-			'Generate authentic high elf names for your D&D characters. Noble, sophisticated names inspired by Tolkien and fantasy traditions. Free high elf name generator with meanings.',
+			'Generate authentic high elf names for your D&D characters. Noble, sophisticated names inspired by Tolkien and fantasy traditions.',
 		keywords: [
 			'high elf names',
 			'high elf name generator',
@@ -30,7 +30,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'wood-elf': {
 		title: 'Wood Elf Name Generator - Nature-Inspired Names',
 		description:
-			'Create wild and nature-inspired wood elf names. Perfect for D&D rangers, druids, and forest dwellers. Free generator with authentic elvish sounds.',
+			'Create wild and nature-inspired wood elf names. Perfect for D&D rangers, druids, and forest dwellers. ',
 		keywords: [
 			'wood elf names',
 			'wood elf name generator',
@@ -43,7 +43,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'dark-elf': {
 		title: 'Dark Elf Name Generator - Drow & Shadow Names',
 		description:
-			'Generate mysterious dark elf (drow) names for your characters. Sinister, powerful names perfect for D&D underdark campaigns. Free drow name generator.',
+			'Generate mysterious dark elf (drow) names for your characters. Sinister, powerful names perfect for D&D underdark campaigns.',
 		keywords: [
 			'dark elf names',
 			'drow names',
@@ -56,7 +56,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'night-elf': {
 		title: 'Night Elf Name Generator - Mystical Kaldorei Names',
 		description:
-			'Create mystical night elf (Kaldorei) names inspired by Warcraft. Ancient, powerful names for druids, hunters, and moon worshippers. Free generator.',
+			'Create mystical night elf (Kaldorei) names inspired by Warcraft. Ancient, powerful names for druids, hunters, and moon worshippers.',
 		keywords: [
 			'night elf names',
 			'kaldorei names',
@@ -69,7 +69,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'blood-elf': {
 		title: "Blood Elf Name Generator - Sin'dorei Names",
 		description:
-			"Generate elegant blood elf (Sin'dorei) names from World of Warcraft. Sophisticated names for mages, paladins, and the fallen nobility. Free generator.",
+			"Generate elegant blood elf (Sin'dorei) names from World of Warcraft. Sophisticated names for mages, paladins, and the fallen nobility.",
 		keywords: [
 			'blood elf names',
 			"sin'dorei names",
@@ -82,7 +82,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'sun-elf': {
 		title: 'Sun Elf Name Generator - Radiant & Majestic Names',
 		description:
-			'Create radiant sun elf names for your D&D characters. Majestic, gold-themed names inspired by celestial and solar themes. Free generator.',
+			'Create radiant sun elf names for your D&D characters. Majestic, gold-themed names inspired by celestial and solar themes.',
 		keywords: [
 			'sun elf names',
 			'sun elf name generator',
@@ -94,7 +94,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'moon-elf': {
 		title: 'Moon Elf Name Generator - Silver & Mystical Names',
 		description:
-			'Generate mystical moon elf names with silver and lunar themes. Perfect for D&D characters connected to the night and stars. Free generator.',
+			'Generate mystical moon elf names with silver and lunar themes. Perfect for D&D characters connected to the night and stars.',
 		keywords: [
 			'moon elf names',
 			'moon elf name generator',
@@ -106,7 +106,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'sea-elf': {
 		title: 'Sea Elf Name Generator - Aquatic & Ocean Names',
 		description:
-			'Create flowing sea elf names inspired by oceans and marine life. Perfect for underwater campaigns and aquatic characters. Free generator.',
+			'Create flowing sea elf names inspired by oceans and marine life. Perfect for underwater campaigns and aquatic characters.',
 		keywords: [
 			'sea elf names',
 			'sea elf name generator',
@@ -118,7 +118,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'snow-elf': {
 		title: 'Snow Elf Name Generator - Frosty & Arctic Names',
 		description:
-			'Generate cold and crystalline snow elf names. Perfect for arctic campaigns and frost-themed characters. Free generator with icy themes.',
+			'Generate cold and crystalline snow elf names. Perfect for arctic campaigns and frost-themed characters.',
 		keywords: [
 			'snow elf names',
 			'snow elf name generator',
@@ -130,7 +130,7 @@ export const RACE_GENERATOR_TDK: Record<
 	'wild-elf': {
 		title: 'Wild Elf Name Generator - Primal & Savage Names',
 		description:
-			'Create primal wild elf names for tribal and savage characters. Raw, nature-connected names for D&D barbarians and primitives. Free generator.',
+			'Create primal wild elf names for tribal and savage characters. Raw, nature-connected names for D&D barbarians and primitives.',
 		keywords: [
 			'wild elf names',
 			'wild elf name generator',
@@ -155,7 +155,7 @@ export const GENDER_GENERATOR_TDK: Record<
 	male: {
 		title: 'Male Elf Name Generator - Masculine Fantasy Names',
 		description:
-			'Generate strong male elf names for your characters. Masculine, heroic names perfect for warriors, mages, and rangers. Free male elf name generator.',
+			'Generate strong male elf names for your characters. Masculine, heroic names perfect for warriors, mages, and rangers.',
 		keywords: [
 			'male elf names',
 			'male elf name generator',
@@ -167,7 +167,7 @@ export const GENDER_GENERATOR_TDK: Record<
 	female: {
 		title: 'Female Elf Name Generator - Elegant Feminine Names',
 		description:
-			'Create beautiful female elf names with grace and elegance. Perfect for sorceresses, priestesses, and noble ladies. Free female elf name generator.',
+			'Create beautiful female elf names with grace and elegance. Perfect for sorceresses, priestesses, and noble ladies.',
 		keywords: [
 			'female elf names',
 			'female elf name generator',
@@ -179,7 +179,7 @@ export const GENDER_GENERATOR_TDK: Record<
 	neutral: {
 		title: 'Gender-Neutral Elf Name Generator - Unisex Names',
 		description:
-			'Generate gender-neutral elf names suitable for any character. Versatile, balanced names that work for all genders. Free unisex elf name generator.',
+			'Generate gender-neutral elf names suitable for any character. Versatile, balanced names that work for all genders.',
 		keywords: [
 			'neutral elf names',
 			'gender neutral elf names',

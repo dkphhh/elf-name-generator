@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { notificationManager } from '$lib/components/notification/notificationManager.svelte';
+	import { notificationManager } from '$lib/components/common-components/notification/notificationManager.svelte';
 	import {
 		ELF_GENDER_LIST,
 		ELF_RACE_LIST,
