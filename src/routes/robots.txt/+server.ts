@@ -1,7 +1,8 @@
 import type { RequestHandler } from './$types';
+import { ORIGIN } from '$env/static/private';
 
 export const GET: RequestHandler = async () => {
-	const baseUrl = 'https://yoursite.com'; // TODO: 替换为实际域名
+	const baseUrl = ORIGIN;
 
 	const robots = `User-agent: *
 Allow: /

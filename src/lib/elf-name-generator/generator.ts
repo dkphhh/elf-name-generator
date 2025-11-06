@@ -6,7 +6,6 @@ function getRadomItem<T>(arr: T[]): T {
 }
 
 export function generateElfName(options?: GeneratorOptions): GeneratedName[] {
-	// TODO: count 要在前端进行限制，不能大于6个
 
 	const { count, includeLastName }: GeneratorOptions = {
 		count: options?.count || 1,

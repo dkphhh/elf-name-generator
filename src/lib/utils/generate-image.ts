@@ -143,7 +143,6 @@ export async function createImgGenTask(option: {
 		width: 1440,
 		height: 2560,
 		force_single: true
-		// TODO: 添加其他必需参数
 	});
 
 	const headers = {

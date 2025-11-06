@@ -1,20 +1,40 @@
 import type { RequestHandler } from './$types';
+import { ORIGIN } from '$env/static/private';
+import { ELF_RACE_LIST, ELF_GENDER_LIST, NAME_STYLE_LIST } from '$lib/elf-name-generator/constant';
 
 export const GET: RequestHandler = async () => {
-	const baseUrl = 'https://yoursite.com'; // TODO: 替换为实际域名
+	const baseUrl = ORIGIN;
 
-	const pages = [
+	// 静态页面
+	const staticPages = [
 		{ url: '', priority: 1.0, changefreq: 'daily' },
-		{ url: '/generator/male', priority: 0.9, changefreq: 'weekly' },
-		{ url: '/generator/female', priority: 0.9, changefreq: 'weekly' },
-		{ url: '/generator/high-elf', priority: 0.8, changefreq: 'weekly' },
-		{ url: '/generator/wood-elf', priority: 0.8, changefreq: 'weekly' },
-		{ url: '/generator/dark-elf', priority: 0.8, changefreq: 'weekly' },
-		{ url: '/generator/night-elf', priority: 0.8, changefreq: 'weekly' },
 		{ url: '/guide', priority: 0.7, changefreq: 'monthly' },
-		{ url: '/blog', priority: 0.6, changefreq: 'weekly' },
 		{ url: '/about', priority: 0.5, changefreq: 'monthly' }
 	];
+
+	// 动态生成种族生成器页面
+	const racePages = ELF_RACE_LIST.map((race) => ({
+		url: `/generator/${race}`,
+		priority: 0.8,
+		changefreq: 'weekly'
+	}));
+
+	// 动态生成性别生成器页面
+	const genderPages = ELF_GENDER_LIST.map((gender) => ({
+		url: `/generator/${gender}`,
+		priority: 0.9,
+		changefreq: 'weekly'
+	}));
+
+	// 动态生成风格生成器页面
+	const stylePages = NAME_STYLE_LIST.map((style) => ({
+		url: `/generator/${style}`,
+		priority: 0.8,
+		changefreq: 'weekly'
+	}));
+
+	// 合并所有页面
+	const pages = [...staticPages, ...genderPages, ...racePages, ...stylePages];
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

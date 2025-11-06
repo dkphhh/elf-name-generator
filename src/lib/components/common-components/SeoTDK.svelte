@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { ORIGIN } from '$env/static/private';
+
 	let {
 		title,
 		description,
@@ -24,7 +26,7 @@
 		'd&d names',
 		'fantasy character names'
 	];
-	const SITE_URL = 'https://elfnamegenerator.com'; // TODO: 替换为实际域名
+	const SITE_URL = ORIGIN;
 
 	/**
 	 * 生成最终的页面标题
