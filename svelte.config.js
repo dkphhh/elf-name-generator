@@ -9,7 +9,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			runtime: 'nodejs22.x',
-			regions: 'iad1'
+			regions: ['iad1', 'bom1', 'hkg1', 'syd1', 'sin1']
 		})
 	}
 };
