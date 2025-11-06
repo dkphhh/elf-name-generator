@@ -70,6 +70,32 @@
 		}
 		return SITE_URL;
 	});
+
+	/**
+	 * 生成 Schema.org 结构化数据的 JSON 字符串
+	 */
+	const schemaJson = JSON.stringify(
+		{
+			'@context': 'https://schema.org',
+			'@type': 'WebApplication',
+			name: 'Elf Name Generator',
+			description:
+				'Generate unique fantasy elf names for your characters. Free tool for D&D, WoW, and fantasy writing with multiple races and customization options.',
+			url: SITE_URL,
+			author:"Dkphhh",
+			applicationCategory: 'UtilityApplication',
+			operatingSystem: 'Web',
+			offers: {
+				'@type': 'Offer',
+				price: '0',
+				priceCurrency: 'USD',
+			}
+		},
+		null,
+		2
+	);
+
+	const schemaScript = '<script type="application/ld+json">' + schemaJson + '<' + '/script>';
 </script>
 
 <svelte:head>
@@ -89,4 +115,7 @@
 	<meta property="twitter:url" content={canonicalUrl} />
 	<meta property="twitter:title" content={seoTitle} />
 	<meta property="twitter:description" content={seoDescription} />
+	<!-- Schema.org structured data -->
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html schemaScript}
 </svelte:head>

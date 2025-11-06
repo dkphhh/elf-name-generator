@@ -6,11 +6,12 @@ const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
-	kit: { adapter: adapter({
-		runtime:"edge",
-		regions:"all",
-		
-	}) }
+	kit: {
+		adapter: adapter({
+			runtime: 'nodejs22.x',
+			regions: 'iad1'
+		})
+	}
 };
 
 export default config;

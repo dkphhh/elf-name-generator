@@ -20,8 +20,7 @@
 		race: initialOptions.race,
 		count: initialOptions.count || 6,
 		style: initialOptions.style,
-		includeLastName: initialOptions.includeLastName ?? true,
-		includeMeaning: initialOptions.includeMeaning
+		includeLastName: initialOptions.includeLastName ?? true
 	});
 	// 生成状态
 	let isGenerating = $state(false);

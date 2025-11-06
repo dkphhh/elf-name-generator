@@ -54,53 +54,53 @@ export const NAME_STYLE_MAP: Record<NameStyle, string> = {
 
 export const RACE_DEFAULT_IMAGE_MAP: Record<ElfRace, Record<ElfGender, string>> = {
 	'blood-elf': {
-		female: '/elf-default-images/blood-elf-female.jpeg',
-		male: '/elf-default-images/blood-elf-male.jpeg',
-		neutral: '/elf-default-images/blood-elf-neutral.jpeg'
+		female: '/elf-default-images/blood-elf-female.webp',
+		male: '/elf-default-images/blood-elf-male.webp',
+		neutral: '/elf-default-images/blood-elf-neutral.webp'
 	},
 	'dark-elf': {
-		female: '/elf-default-images/dark-elf-female.jpeg',
-		male: '/elf-default-images/dark-elf-male.jpeg',
-		neutral: '/elf-default-images/dark-elf-neutral.jpeg'
+		female: '/elf-default-images/dark-elf-female.webp',
+		male: '/elf-default-images/dark-elf-male.webp',
+		neutral: '/elf-default-images/dark-elf-neutral.webp'
 	},
 	'high-elf': {
-		female: '/elf-default-images/high-elf-female.jpeg',
-		male: '/elf-default-images/high-elf-male.jpeg',
-		neutral: '/elf-default-images/high-elf-neutral.jpeg'
+		female: '/elf-default-images/high-elf-female.webp',
+		male: '/elf-default-images/high-elf-male.webp',
+		neutral: '/elf-default-images/high-elf-neutral.webp'
 	},
 	'moon-elf': {
-		female: '/elf-default-images/moon-elf-female.jpeg',
-		male: '/elf-default-images/moon-elf-male.jpeg',
-		neutral: '/elf-default-images/moon-elf-neutral.jpeg'
+		female: '/elf-default-images/moon-elf-female.webp',
+		male: '/elf-default-images/moon-elf-male.webp',
+		neutral: '/elf-default-images/moon-elf-neutral.webp'
 	},
 	'night-elf': {
-		female: '/elf-default-images/night-elf-female.jpeg',
-		male: '/elf-default-images/night-elf-male.jpeg',
-		neutral: '/elf-default-images/night-elf-neutral.jpeg'
+		female: '/elf-default-images/night-elf-female.webp',
+		male: '/elf-default-images/night-elf-male.webp',
+		neutral: '/elf-default-images/night-elf-neutral.webp'
 	},
 	'sea-elf': {
-		female: '/elf-default-images/sea-elf-female.jpeg',
-		male: '/elf-default-images/sea-elf-male.jpeg',
-		neutral: '/elf-default-images/sea-elf-neutral.jpeg'
+		female: '/elf-default-images/sea-elf-female.webp',
+		male: '/elf-default-images/sea-elf-male.webp',
+		neutral: '/elf-default-images/sea-elf-neutral.webp'
 	},
 	'snow-elf': {
-		female: '/elf-default-images/snow-elf-female.jpeg',
-		male: '/elf-default-images/snow-elf-male.jpeg',
-		neutral: '/elf-default-images/snow-elf-neutral.jpeg'
+		female: '/elf-default-images/snow-elf-female.webp',
+		male: '/elf-default-images/snow-elf-male.webp',
+		neutral: '/elf-default-images/snow-elf-neutral.webp'
 	},
 	'sun-elf': {
-		female: '/elf-default-images/sun-elf-female.jpeg',
-		male: '/elf-default-images/sun-elf-male.jpeg',
-		neutral: '/elf-default-images/sun-elf-neutral.jpeg'
+		female: '/elf-default-images/sun-elf-female.webp',
+		male: '/elf-default-images/sun-elf-male.webp',
+		neutral: '/elf-default-images/sun-elf-neutral.webp'
 	},
 	'wild-elf': {
-		female: '/elf-default-images/wild-elf-female.jpeg',
-		male: '/elf-default-images/wild-elf-male.jpeg',
-		neutral: '/elf-default-images/wild-elf-neutral.jpeg'
+		female: '/elf-default-images/wild-elf-female.webp',
+		male: '/elf-default-images/wild-elf-male.webp',
+		neutral: '/elf-default-images/wild-elf-neutral.webp'
 	},
 	'wood-elf': {
-		female: '/elf-default-images/wood-elf-female.jpeg',
-		male: '/elf-default-images/wood-elf-male.jpeg',
-		neutral: '/elf-default-images/wood-elf-neutral.jpeg'
+		female: '/elf-default-images/wood-elf-female.webp',
+		male: '/elf-default-images/wood-elf-male.webp',
+		neutral: '/elf-default-images/wood-elf-neutral.webp'
 	}
 };

@@ -1,12 +1,11 @@
 import elfData from '$lib/elf-name-generator/elf-name-data/data';
 import { ELF_GENDER_LIST, ELF_RACE_LIST, NAME_STYLE_LIST } from '$lib/elf-name-generator/constant';
 
-function getRadomItem<T>(arr: T[]): T {
+function getRandomItem<T>(arr: T[]): T {
 	return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export function generateElfName(options?: GeneratorOptions): GeneratedName[] {
-
 	const { count, includeLastName }: GeneratorOptions = {
 		count: options?.count || 1,
 		includeLastName: options?.includeLastName || false
@@ -16,12 +15,12 @@ export function generateElfName(options?: GeneratorOptions): GeneratedName[] {
 	const seen = new Set<string>();
 
 	for (let i = 0; i < count; i++) {
-		const gender = options?.gender || getRadomItem(ELF_GENDER_LIST);
-		const race = options?.race || getRadomItem(ELF_RACE_LIST);
-		const style = options?.style || getRadomItem(NAME_STYLE_LIST);
+		const gender = options?.gender || getRandomItem(ELF_GENDER_LIST);
+		const race = options?.race || getRandomItem(ELF_RACE_LIST);
+		const style = options?.style || getRandomItem(NAME_STYLE_LIST);
 		const elfName: GeneratedName = {
-			firstName: getRadomItem(elfData[race][style]['firstName'][gender]),
-			lastName: includeLastName ? getRadomItem(elfData[race][style]['lastName']) : undefined,
+			firstName: getRandomItem(elfData[race][style]['firstName'][gender]),
+			lastName: includeLastName ? getRandomItem(elfData[race][style]['lastName']) : undefined,
 			gender: gender,
 			race: race,
 			style: style
