@@ -1,4 +1,4 @@
-// 直接导入所有 JSON 数据文件
+// 导入所有 JSON 数据文件
 import bloodElfData from './data/blood-elf.json';
 import darkElfData from './data/dark-elf.json';
 import highElfData from './data/high-elf.json';
