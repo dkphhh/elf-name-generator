@@ -55,3 +55,9 @@
 	--depth: 1;
 	--noise: 0;
 }
+
+@layer utilities {
+	.icon-style {
+		@apply size-5 fill-none stroke-current stroke-2;
+	}
+}
