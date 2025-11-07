@@ -65,7 +65,8 @@
 	<fieldset class="fieldset gap-4 rounded-box border border-base-300 bg-base-200 p-6">
 		<legend class="fieldset-legend text-2xl font-bold">Generate Your Elf Name</legend>
 
-		<label class="select max-w-80 lg:w-full" for="gender">
+		<!-- 性别 -->
+		<label class="select w-full" for="gender">
 			<span class="label min-w-38 font-semibold">Choose Elf Gender</span>
 			<select id="gender" class="select-bordered select w-full" bind:value={generateOptions.gender}>
 				<option disabled selected>Choose Elf Gender</option>
@@ -77,7 +78,8 @@
 			</select>
 		</label>
 
-		<label class="select max-w-80 lg:w-full" for="race">
+		<!-- 种族 -->
+		<label class="select w-full" for="race">
 			<span class="label min-w-38 font-semibold">Choose Elf Race</span>
 			<select id="race" class="select-bordered select w-full" bind:value={generateOptions.race}>
 				<option disabled selected>Choose Elf Race</option>
@@ -89,7 +91,8 @@
 			</select>
 		</label>
 
-		<label class="select max-w-80 lg:w-full" for="style">
+		<!-- 名字风格 -->
+		<label class="select w-full" for="style">
 			<span class="label min-w-38 font-semibold">Choose Name Style</span>
 			<select id="style" class="select-bordered select w-full" bind:value={generateOptions.style}>
 				<option disabled selected>Choose Name Style</option>
@@ -100,7 +103,9 @@
 				{/each}
 			</select>
 		</label>
-		<div class="flex flex-col gap-1">
+
+		<!-- 选择数量 -->
+		<div class="flex w-full flex-col gap-1">
 			<label class="input w-full" for="count">
 				<span class="label min-w-38 font-semibold">Number of Names</span>
 				<input
@@ -120,6 +125,7 @@
 			</div>
 		</div>
 
+		<!-- 是否包含姓氏 -->
 		<div class="mt-4">
 			<label class="label cursor-pointer">
 				<span class="label-text">Include Last Name</span>
@@ -131,6 +137,7 @@
 			</label>
 		</div>
 
+		<!-- 生成按钮 -->
 		<button
 			class="btn mt-6 w-full btn-lg btn-primary"
 			onclick={generateNames}
