@@ -82,13 +82,13 @@
 			description:
 				'Generate unique fantasy elf names for your characters. Free tool for D&D, WoW, and fantasy writing with multiple races and customization options.',
 			url: SITE_URL,
-			author:"Dkphhh",
+			author: 'Dkphhh',
 			applicationCategory: 'UtilityApplication',
 			operatingSystem: 'Web',
 			offers: {
 				'@type': 'Offer',
 				price: '0',
-				priceCurrency: 'USD',
+				priceCurrency: 'USD'
 			}
 		},
 		null,
@@ -115,7 +115,36 @@
 	<meta property="twitter:url" content={canonicalUrl} />
 	<meta property="twitter:title" content={seoTitle} />
 	<meta property="twitter:description" content={seoDescription} />
+
 	<!-- Schema.org structured data -->
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html schemaScript}
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LD4L4ZZZ0S"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-LD4L4ZZZ0S');
+	</script>
+
+	<!-- Microsoft clarity -->
+	<script type="text/javascript">
+		(function (c, l, a, r, i, t, y) {
+			c[a] =
+				c[a] ||
+				function () {
+					(c[a].q = c[a].q || []).push(arguments);
+				};
+			t = l.createElement(r);
+			t.async = 1;
+			t.src = 'https://www.clarity.ms/tag/' + i;
+			y = l.getElementsByTagName(r)[0];
+			y.parentNode.insertBefore(t, y);
+		})(window, document, 'clarity', 'script', 'u27dgbgg7v');
+	</script>
 </svelte:head>

@@ -6,9 +6,10 @@
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	// import ColorModeButton from '$lib/components/ColorModeButton.svelte';
 
-	injectSpeedInsights();
 	let { children } = $props();
+
 	injectAnalytics();
+	injectSpeedInsights();
 </script>
 
 <svelte:head>
