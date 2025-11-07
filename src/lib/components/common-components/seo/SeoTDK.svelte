@@ -153,4 +153,7 @@
 		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8423415857252552"
 		crossorigin="anonymous"
 	></script>
+
+	<!-- bing 站长工具 -->
+	<meta name="msvalidate.01" content="DD4493D7A5EC00E147B7B5AD5E247FC7" />
 </svelte:head>
