@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import NavBar from '$lib/components/page-section/NavBar.svelte';
-	import favicon from '$lib/assets/favicon.ico';
+	import favicon from '$lib/assets/favicon.png';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import Notification from '$lib/components/common-components/notification/Notification.svelte';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';

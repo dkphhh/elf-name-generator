@@ -3,7 +3,7 @@
 </script>
 
 <section class="mb-12 text-center">
-	<h1 class="mb-4 flex items-center justify-center gap-4 text-4xl font-bold md:text-6xl">
+	<h1 class="mb-4 flex items-center justify-center gap-4 text-2xl font-bold md:text-6xl">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="48"
