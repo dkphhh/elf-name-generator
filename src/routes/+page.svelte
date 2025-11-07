@@ -1,10 +1,9 @@
 <script lang="ts">
 	import Generator from '$lib/components/elf-name-generator/Generator.svelte';
 	import NameResault from '$lib/components/elf-name-card/NameResault.svelte';
-	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
+	import SeoTDK from '$lib/components/common-components/seo/SeoTDK.svelte';
 	import ContentSection from '$lib/components/page-section/ContentSection.svelte';
 	import FrontSection from '$lib/components/page-section/FrontSection.svelte';
-	import Footer from '$lib/components/page-section/Footer.svelte';
 	// 生成的名字列表
 	let generatedNames: GeneratedName[] = $state([]);
 </script>
@@ -35,7 +34,4 @@
 			based on various fantasy traditions including Tolkien's Middle-earth, Dungeons & Dragons, and
 			other popular fantasy settings."
 	/>
-
-	<!-- Quick Links -->
-	<Footer />
 </main>

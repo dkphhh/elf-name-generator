@@ -1,8 +1,5 @@
-import { redirect } from '@sveltejs/kit';
+import { ALL_BLOG_POSTS } from '$lib/page-data/utils';
 
-import type { PageServerLoad } from './$types';
-import { resolve } from '$app/paths';
-
-export const load: PageServerLoad = async () => {
-	redirect(307, resolve('/guide'));
+export const load = async () => {
+	return { ALL_BLOG_POSTS };
 };

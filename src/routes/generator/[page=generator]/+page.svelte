@@ -2,17 +2,16 @@
 	import { page } from '$app/state';
 	import Generator from '$lib/components/elf-name-generator/Generator.svelte';
 	import NameResault from '$lib/components/elf-name-card/NameResault.svelte';
-	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
+	import SeoTDK from '$lib/components/common-components/seo/SeoTDK.svelte';
 	import {
 		RACE_GENERATOR_TDK,
 		GENDER_GENERATOR_TDK,
 		STYLE_GENERATOR_TDK
-	} from '$lib/seo/tdk-config';
+	} from '$lib/components/common-components/seo/tdk-config';
 	import { ELF_RACE_MAP, ELF_GENDER_MAP, NAME_STYLE_MAP } from '$lib/elf-name-generator/constant';
-	import { RACE_PAGE_DATA } from '$lib/seo/page-data';
+	import { RACE_PAGE_DATA } from '$lib/page-data/race-page-data';
 	import ContentSection from '$lib/components/page-section/ContentSection.svelte';
 	import FrontSection from '$lib/components/page-section/FrontSection.svelte';
-	import Footer from '$lib/components/page-section/Footer.svelte';
 
 	let generatedNames: GeneratedName[] = $state([]);
 
@@ -103,5 +102,4 @@
 	<NameResault {generatedNames} />
 
 	<ContentSection {contentTitle} {content} />
-	<Footer />
 </main>

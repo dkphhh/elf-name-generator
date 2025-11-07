@@ -1,7 +1,1 @@
-import type { Config } from '@sveltejs/adapter-vercel';
-
-export const config: Config = {
-	isr: {
-		expiration: 86400,
-	}
-};
+export const prerender = true;

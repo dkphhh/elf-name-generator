@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
+	import SeoTDK from '$lib/components/common-components/seo/SeoTDK.svelte';
 
 	const errorStatus = $derived(page.status);
 	const errorMessage = $derived(page.error?.message || 'An unexpected error occurred');

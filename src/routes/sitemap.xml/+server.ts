@@ -9,7 +9,10 @@ export const GET: RequestHandler = async () => {
 	const staticPages = [
 		{ url: '', priority: 1.0, changefreq: 'daily' },
 		{ url: '/guide', priority: 0.7, changefreq: 'monthly' },
-		{ url: '/about', priority: 0.5, changefreq: 'monthly' }
+		{ url: '/about', priority: 0.5, changefreq: 'monthly' },
+		{ url: '/terms-of-service', priority: 0.5, changefreq: 'yearly' },
+		{ url: '/privacy-policy', priority: 0.5, changefreq: 'yearly' },
+		{ url: '/blog', priority: 0.6, changefreq: 'weekly' }
 	];
 
 	// 动态生成种族生成器页面

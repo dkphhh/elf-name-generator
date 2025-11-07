@@ -11,6 +11,8 @@ applyTo: '**'
 - **框架**: SvelteKit (使用 Svelte 5 runes: `$state`, `$derived`, `$effect`, `$props`)
 - **运行时**: Bun (开发、构建、生产环境)
 - **样式**: Tailwind CSS 4 + daisyUI (通过 CSS `@plugin` 导入)
+- **部署**：使用 Vercel 进行部署
+- **数据监控**：Google Analytics 4、Microsoft Clarity、Vercel Web Analytics
 
 ## 开发约定
 
@@ -59,7 +61,6 @@ bun run build      # 构建到 build/ 目录
 bun run production # 生产环境运行
 ./deploy.sh        # 自动 rsync 到服务器并重启 Docker 容器
 ```
-
 
 ### 代码检查
 

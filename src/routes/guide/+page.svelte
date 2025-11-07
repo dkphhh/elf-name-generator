@@ -1,7 +1,6 @@
 <script lang="ts">
-	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
-	import { PAGE_TDK } from '$lib/seo/tdk-config';
-	import Footer from '$lib/components/page-section/Footer.svelte';
+	import SeoTDK from '$lib/components/common-components/seo/SeoTDK.svelte';
+	import { PAGE_TDK } from '$lib/components/common-components/seo/tdk-config';
 	import GeneratorButton from '$lib/components/elf-name-generator/GeneratorButton.svelte';
 </script>
 
@@ -131,5 +130,4 @@
 			</p>
 		</section>
 	</article>
-	<Footer />
 </main>

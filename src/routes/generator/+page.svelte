@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import GeneratorCard from '$lib/components/elf-name-generator/GeneratorCard.svelte';
-	import SeoTDK from '$lib/components/common-components/SeoTDK.svelte';
+	import Generator from '$lib/components/elf-name-generator/Generator.svelte';
+	import NameResault from '$lib/components/elf-name-card/NameResault.svelte';
+	import SeoTDK from '$lib/components/common-components/seo/SeoTDK.svelte';
 	import {
 		ELF_RACE_LIST,
 		ELF_RACE_MAP,
@@ -10,8 +12,10 @@
 		NAME_STYLE_LIST,
 		NAME_STYLE_MAP
 	} from '$lib/elf-name-generator/constant';
-	import Footer from '$lib/components/page-section/Footer.svelte';
 	import FrontSection from '$lib/components/page-section/FrontSection.svelte';
+
+	// 生成的名字列表
+	let generatedNames: GeneratedName[] = $state([]);
 </script>
 
 <SeoTDK
@@ -31,9 +35,14 @@
 	<!-- Hero Section -->
 	<FrontSection
 		pageTitle="All Elf Name Generators"
-		pageDescription="			Choose from our collection of specialized elf name generators by race, gender, or style.
-"
+		pageDescription="Choose from our collection of specialized elf name generators by race, gender, style, or use the main generator to create unique fantasy elf names below."
 	/>
+
+	<!-- 名字生成器 -->
+	<Generator bind:generatedNames />
+
+	<!-- 展示名字结果 -->
+	<NameResault {generatedNames} />
 
 	<!-- 种族生成器 -->
 	<section class="mb-12">
@@ -58,5 +67,4 @@
 		<a href={resolve('/')} class="btn btn-outline btn-lg">← Back to Main Generator</a>
 	</section>
 
-	<Footer />
 </main>
