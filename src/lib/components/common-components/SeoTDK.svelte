@@ -147,4 +147,10 @@
 			y.parentNode.insertBefore(t, y);
 		})(window, document, 'clarity', 'script', 'u27dgbgg7v');
 	</script>
+	<!-- Adsense -->
+	<script
+		async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8423415857252552"
+		crossorigin="anonymous"
+	></script>
 </svelte:head>
