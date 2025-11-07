@@ -13,7 +13,7 @@
 />
 
 <main class="container mx-auto px-4 py-8">
-	<article class="mx-auto prose prose-lg max-w-4xl">
+	<article class="mx-auto prose prose-base max-w-4xl lg:prose-lg">
 		<h1>About Elf Name Generator</h1>
 
 		<section>

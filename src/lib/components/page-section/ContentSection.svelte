@@ -14,7 +14,7 @@
 	let { contentTitle, content }: { contentTitle: string; content: string } = $props();
 </script>
 
-<section class="mx-auto prose prose-lg mb-12 max-w-4xl">
+<section class="mx-auto prose prose-base mb-12 max-w-4xl lg:prose-lg">
 	<h2>{contentTitle}</h2>
 
 	<MarkdownRender md={content} />
