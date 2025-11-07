@@ -65,8 +65,8 @@
 	<fieldset class="fieldset gap-4 rounded-box border border-base-300 bg-base-200 p-6">
 		<legend class="fieldset-legend text-2xl font-bold">Generate Your Elf Name</legend>
 
-		<label class="select w-full" for="gender">
-			<span class="label min-w-40 font-semibold">Choose Elf Gender</span>
+		<label class="select max-w-80 lg:w-full" for="gender">
+			<span class="label min-w-38 font-semibold">Choose Elf Gender</span>
 			<select id="gender" class="select-bordered select w-full" bind:value={generateOptions.gender}>
 				<option disabled selected>Choose Elf Gender</option>
 				<option value={undefined}>Random</option>
@@ -77,8 +77,8 @@
 			</select>
 		</label>
 
-		<label class="select w-full" for="race">
-			<span class="label min-w-40 font-semibold">Choose Elf Race</span>
+		<label class="select max-w-80 lg:w-full" for="race">
+			<span class="label min-w-38 font-semibold">Choose Elf Race</span>
 			<select id="race" class="select-bordered select w-full" bind:value={generateOptions.race}>
 				<option disabled selected>Choose Elf Race</option>
 				<option value={undefined}>Random</option>
@@ -89,8 +89,8 @@
 			</select>
 		</label>
 
-		<label class="select w-full" for="style">
-			<span class="label min-w-40 font-semibold">Choose Name Style</span>
+		<label class="select max-w-80 lg:w-full" for="style">
+			<span class="label min-w-38 font-semibold">Choose Name Style</span>
 			<select id="style" class="select-bordered select w-full" bind:value={generateOptions.style}>
 				<option disabled selected>Choose Name Style</option>
 				<option value={undefined}>Random</option>
@@ -100,26 +100,27 @@
 				{/each}
 			</select>
 		</label>
-
-		<label class="input w-full" for="count">
-			<span class="label min-w-40 font-semibold">Number of Names</span>
-			<input
-				id="count"
-				type="range"
-				min="1"
-				max="10"
-				bind:value={generateOptions.count}
-				class="range range-primary"
-			/>
+		<div class="flex flex-col gap-1">
+			<label class="input w-full" for="count">
+				<span class="label min-w-38 font-semibold">Number of Names</span>
+				<input
+					id="count"
+					type="range"
+					min="1"
+					max="10"
+					bind:value={generateOptions.count}
+					class="range range-primary"
+				/>
+			</label>
 			<div class="mt-1 flex justify-between px-2 text-xs">
 				<span class="font-semibold text-primary"
 					>generate {generateOptions.count}
 					{generateOptions.count && generateOptions.count > 1 ? 'names' : 'name'}</span
 				>
 			</div>
-		</label>
+		</div>
 
-		<div class="form-control mt-4">
+		<div class="mt-4">
 			<label class="label cursor-pointer">
 				<span class="label-text">Include Last Name</span>
 				<input
