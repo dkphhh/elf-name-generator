@@ -20,7 +20,7 @@ export function generateElfName(options?: GeneratorOptions): GeneratedName[] {
 		const style = options?.style || getRandomItem(NAME_STYLE_LIST);
 		const elfName: GeneratedName = {
 			firstName: getRandomItem(elfData[race][style]['firstName'][gender]),
-			lastName: includeLastName ? getRandomItem(elfData[race][style]['lastName']) : undefined,
+			lastName: includeLastName ? getRandomItem(elfData[race][style]['lastName']) : '',
 			gender: gender,
 			race: race,
 			style: style
